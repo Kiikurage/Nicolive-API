@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.service.edge;
+
+import "google/protobuf/timestamp.proto";
+import "dwango/nicolive/chat/service/edge/PackedSegment.proto";
+
+/**
+ * ストリーム開始以前のメッセージを表すチャンク。必ずストリームの先頭に送られてくる。
+ */
+message BackwardSegment {
+  google.protobuf.Timestamp until = 1;
+  PackedSegment.Next segment = 2;
+  PackedSegment.StateSnapshot snapshot = 3;
+}

@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data;
+
+
+message Nicoad {
+  oneof versions {
+    V0 v0 = 1;
+    V1 v1 = 2;
+  }
+
+  message V0 {
+    Latest latest = 1;
+    repeated Ranking ranking = 2;
+    int32 total_point = 3;
+
+    message Latest {
+      string advertiser = 1;
+      int32 point = 2;
+      optional string message = 3;
+    }
+
+    message Ranking {
+      string advertiser = 1;
+      int32 rank = 2;
+      optional string message = 3;
+      optional int32 user_rank = 4;
+    }
+  }
+
+  message V1 {
+    int32 total_ad_point = 1;
+    string message = 2;
+  }
+}

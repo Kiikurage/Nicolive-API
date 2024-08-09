@@ -1,0 +1,9 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"files": {
+		"ignore": [
+			"./src/CommentSource/nicolive/gen/**/*",
+			"./src/CommentSource/nicolive/niconama.js"
+		]
+	}
+}

@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data.atoms;
+
+import "google/protobuf/timestamp.proto";
+
+
+message ModerationAnnouncement {
+  optional string message = 1;
+  repeated GuidelineItem guidelineItems = 2;
+  google.protobuf.Timestamp updatedAt = 3;
+
+  enum GuidelineItem {
+    UNKNOWN = 0;
+    SEXUAL = 1;
+    SPAM = 2;
+    SLANDER = 3;
+    PERSONAL_INFORMATION = 4;
+  }
+}

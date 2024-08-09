@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data;
+
+
+message CommentMode {
+  Layout layout = 1;
+
+  enum Layout {
+    Normal = 0;
+    SplitTop = 1;
+    Background = 2;
+  }
+}

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data.atoms;
+
+import "google/protobuf/timestamp.proto";
+import "dwango/nicolive/chat/data/atoms/ModeratorUserInfo.proto";
+
+
+message SSNGUpdated {
+  SSNGOperation operation = 1;
+  int64 ssng_id = 2;
+  ModeratorUserInfo operator = 3;
+  optional SSNGType type = 4;
+  optional string source = 5;
+  optional google.protobuf.Timestamp updatedAt = 6;
+
+  enum SSNGOperation {
+    ADD = 0;
+    DELETE = 1;
+  }
+
+  enum SSNGType {
+    USER = 0;
+    WORD = 1;
+    COMMAND = 2;
+  }
+}

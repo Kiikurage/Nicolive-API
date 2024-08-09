@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data;
+
+import "google/protobuf/duration.proto";
+
+
+message SimpleNotification {
+  oneof message {
+    string ichiba = 1;
+    string quote = 2;
+    string emotion = 3;
+    string cruise = 4;
+    string program_extended = 5;
+    string ranking_in = 6;
+    string ranking_updated = 8;
+    string visited = 7;
+  }
+}

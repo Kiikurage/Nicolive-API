@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data;
+
+
+message NicoliveOrigin {
+    Chat chat = 1;
+
+    message Chat {
+      int64 live_id = 1;
+    }
+}

@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data.atoms;
+
+
+message ModeratorUserInfo {
+  int64 user_id = 1;
+  optional string nickname = 2;
+  optional string iconUrl = 4;
+}

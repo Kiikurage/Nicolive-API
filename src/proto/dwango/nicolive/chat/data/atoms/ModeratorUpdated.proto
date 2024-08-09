@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data.atoms;
+
+import "google/protobuf/timestamp.proto";
+import "dwango/nicolive/chat/data/atoms/ModeratorUserInfo.proto";
+
+
+message ModeratorUpdated {
+  ModeratorOperation operation = 1;
+  ModeratorUserInfo operator = 2;
+  google.protobuf.Timestamp updatedAt = 3;
+
+  enum ModeratorOperation {
+    ADD = 0;
+    DELETE = 1;
+  }
+}

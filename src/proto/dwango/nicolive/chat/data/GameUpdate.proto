@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data;
+
+
+message GameUpdate {
+}

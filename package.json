@@ -1,0 +1,36 @@
+{
+	"name": "@kikurage/nicolive-api",
+	"version": "0.0.3",
+	"description": "ニコニコ生放送のAPIを利用するための非公式APIクライアント",
+	"author": {
+		"name": "kikurage",
+		"email": "y.kikura@gmail.com"
+	},
+	"main": "./index.js",
+	"scripts": {
+		"build": "bun run build:proto && bun run build:ts",
+		"build:proto": "buf generate",
+		"build:ts": "tsc",
+		"bundle": "bun run build && cp package.json README.md build",
+		"pack": "bun run bundle && npm pack ./build",
+		"prebuild:ts": "bun run clean:ts",
+		"prebuild:proto": "bun run clean:proto",
+		"clean": "bun run clean:ts && bun run clean:proto",
+		"clean:ts": "rimraf ./build",
+		"clean:proto": "rimraf ./src/gen",
+		"lint": "biome check --write src"
+	},
+	"dependencies": {
+		"@bufbuild/protobuf": "^2.0.0",
+		"cheerio": "^1.0.0-rc.12",
+		"ws": "^8.18.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.8.3",
+		"@bufbuild/buf": "^1.35.1",
+		"@bufbuild/protoc-gen-es": "^2.0.0",
+		"@types/ws": "^8.5.12",
+		"rimraf": "^4.1.2",
+		"typescript": "^4.9.5"
+	}
+}

@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data;
+
+
+message Enquete {
+  string question = 1;
+  repeated Choice choices = 2;
+  Status status = 3;
+
+  enum Status {
+    Closed = 0;
+    Poll = 1;
+    Result = 2;
+  }
+
+  message Choice {
+    string description = 1;
+    optional int32 per_mille = 3;
+  }
+}

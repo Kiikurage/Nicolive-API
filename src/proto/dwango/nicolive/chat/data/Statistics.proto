@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data;
+
+
+message Statistics {
+  optional int64 viewers = 1;
+  optional int64 comments = 2;
+  optional int64 ad_points = 3;
+  optional int64 gift_points = 4;
+}

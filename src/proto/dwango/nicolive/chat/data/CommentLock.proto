@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data;
+
+
+message CommentLock {
+  Status status = 1;
+
+  enum Status {
+    Unretricted = 0;
+    Locked = 1;
+  }
+}

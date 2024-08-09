@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data;
+
+
+message Gift {
+  string item_id = 1;
+  optional int64 advertiser_user_id = 2;
+  string advertiser_name = 3;
+  int64 point = 4;
+  string message = 5;
+  string item_name = 6;
+  optional int32 contribution_rank = 7;
+}

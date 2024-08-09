@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data;
+
+import "dwango/nicolive/chat/data/Jump.proto";
+import "dwango/nicolive/chat/data/Redirect.proto";
+
+
+message MoveOrder {
+  oneof to {
+    Jump jump = 1;
+    Redirect redirect = 2;
+  }
+}

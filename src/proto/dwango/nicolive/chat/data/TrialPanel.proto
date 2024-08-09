@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data;
+
+
+message TrialPanel {
+  Panel panel = 1;
+  Mode unqualified_user = 2;
+
+  enum Panel {
+    Hidden = 0;
+    Display = 1;
+  }
+
+  enum Mode {
+    Allowed = 0;
+    Restricted = 1;
+    Forbidden = 2;
+  }
+}

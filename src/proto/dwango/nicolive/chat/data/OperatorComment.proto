@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data;
+
+import "dwango/nicolive/chat/data/Chat.proto";
+
+
+message OperatorComment {
+  string content = 1;
+  optional string name = 2;
+  Chat.Modifier modifier = 3;
+  optional string link = 4;
+}

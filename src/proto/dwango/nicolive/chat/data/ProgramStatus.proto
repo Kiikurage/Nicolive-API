@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data;
+
+
+message ProgramStatus {
+  State state = 1;
+
+  enum State {
+    Unknown = 0;
+    Ended = 1;
+  }
+}

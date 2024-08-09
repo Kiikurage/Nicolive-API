@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.service.edge;
+
+import "google/protobuf/timestamp.proto";
+import "dwango/nicolive/chat/data/NicoliveMessage.proto";
+import "dwango/nicolive/chat/data/NicoliveState.proto";
+import "dwango/nicolive/chat/data/NicoliveOrigin.proto";
+
+
+message ChunkedMessage {
+  Meta meta = 1;
+  oneof payload {
+    dwango.nicolive.chat.data.NicoliveMessage message = 2;
+    dwango.nicolive.chat.data.NicoliveState state = 4;
+    Signal signal = 5;
+  }
+
+  enum Signal {
+    Flushed = 0;
+  }
+
+  message Meta {
+    string id = 1;
+    google.protobuf.Timestamp at = 2;
+    dwango.nicolive.chat.data.NicoliveOrigin origin = 3;
+  }
+}

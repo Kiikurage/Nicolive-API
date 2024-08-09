@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data;
+
+message TagUpdated {
+  repeated Tag tags = 1;
+  bool owner_locked = 2;
+
+  message Tag {
+    string text = 1;
+    bool locked = 2;
+    bool reserved = 3;
+    string nicopedia_uri = 4;
+  }
+}

@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data;
+
+import "google/protobuf/duration.proto";
+
+
+message Redirect {
+  string uri = 1;
+  string message = 2;
+  google.protobuf.Duration wait = 4;
+}

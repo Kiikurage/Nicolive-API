@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.service.edge;
+
+import "google/protobuf/timestamp.proto";
+
+
+message MessageSegment {
+  google.protobuf.Timestamp from = 1;
+  google.protobuf.Timestamp until = 2;
+  string uri = 3;
+}

@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data;
+
+import "google/protobuf/duration.proto";
+
+
+message FingerPrint {
+  Position position = 1;
+  Size size = 2;
+  google.protobuf.Duration duration = 4;
+
+  enum Position {
+    off = 0;
+    hidarishita = 1;
+    shita = 2;
+    migishita = 3;
+    hidari = 4;
+    naka = 5;
+    migi = 6;
+    hidariue = 7;
+    ue = 8;
+    migiue = 9;
+  }
+
+  enum Size {
+    small = 0;
+    middle = 1;
+    big = 2;
+  }
+}

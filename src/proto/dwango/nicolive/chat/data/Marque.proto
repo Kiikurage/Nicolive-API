@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data;
+
+import "google/protobuf/duration.proto";
+import "dwango/nicolive/chat/data/OperatorComment.proto";
+
+
+message Marque {
+  optional Display display = 1;
+
+  message Display {
+    OperatorComment operator_comment = 1;
+    optional google.protobuf.Duration duration = 3;
+  }
+}

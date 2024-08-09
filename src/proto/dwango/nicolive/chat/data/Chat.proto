@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package dwango.nicolive.chat.data;
+
+
+message Chat {
+  string content = 1;
+  string name = 2;
+  int32 vpos = 3;
+  AccountStatus account_status = 4;
+  oneof source {
+    int64 raw_user_id = 5;
+    string hashed_user_id = 6;
+  }
+  Modifier modifier = 7;
+  int32 no = 8;
+
+  enum AccountStatus {
+    Standard = 0;
+    Premium = 1;
+  }
+
+  message Modifier {
+    Pos position = 1;
+    Size size = 2;
+    oneof color {
+      ColorName named_color = 3;
+      FullColor full_color = 4;
+    }
+    Font font = 5;
+    Opacity opacity = 6;
+
+    enum Pos {
+      naka = 0;
+      shita = 1;
+      ue = 2;
+    }
+
+    enum Size {
+      medium = 0;
+      small = 1;
+      big = 2;
+    }
+
+    enum ColorName {
+      white = 0;
+      red = 1;
+      pink = 2;
+      orange = 3;
+      yellow = 4;
+      green = 5;
+      cyan = 6;
+      blue = 7;
+      purple = 8;
+      black = 9;
+      white2 = 10;
+      red2 = 11;
+      pink2 = 12;
+      orange2 = 13;
+      yellow2 = 14;
+      green2 = 15;
+      cyan2 = 16;
+      blue2 = 17;
+      purple2 = 18;
+      black2 = 19;
+    }
+
+    enum Font {
+      defont = 0;
+      mincho = 1;
+      gothic = 2;
+    }
+
+    enum Opacity {
+      Normal = 0;
+      Translucent = 1;
+    }
+
+    message FullColor {
+      int32 r = 1;
+      int32 g = 2;
+      int32 b = 3;
+    }
+  }
+}
