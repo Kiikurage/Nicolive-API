@@ -1,6 +1,6 @@
 {
 	"name": "@kikurage/nicolive-api",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "ニコニコ生放送のAPIを利用するための非公式APIクライアント",
 	"author": {
 		"name": "kikurage",
