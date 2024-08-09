@@ -6,6 +6,10 @@
 		"name": "kikurage",
 		"email": "y.kikura@gmail.com"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Kiikurage/Nicolive-API"
+	},
 	"main": "./index.js",
 	"scripts": {
 		"build": "npm run build:proto && npm run build:ts",
