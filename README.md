@@ -2,8 +2,8 @@
 
 Web版ニコニコ生放送のJavaScriptから抽出したAPI定義。
 
-[!CAUTION] 
-このAPI定義は非公式であり、最新の実装と異なる可能性があります。
+> [!CAUTION] 
+> このAPI定義は非公式であり、最新の実装と異なる可能性があります。
 
 ## 利用法
 
@@ -11,47 +11,47 @@ NicoLiveApiクラスをインポートして利用します。
 
 ```typescript
 // Node.js環境
-import { NicoLiveClient } from '@kiikurage/nicolive-api/node';
+import { NicoliveClient } from '@kikurage/nicolive-api/node';
 
 // ブラウザ環境
-import { NicoLiveClient } from '@kiikurage/nicolive-api/browser';
+import { NicoliveClient } from '@kikurage/nicolive-api/browser';
 
 
 // 利用例
 new NicoliveClient({ liveId: __LIVE_ID__ })
     .on("chat", (chat) => {
-        console.log(`[${chate.name}] ${chat.content}`);
+        console.log(`[${chat.name}] ${chat.content}`);
     })
     .connect();
 ```
 
 ## API
 
-### `NicoLiveClient`
+### `NicoliveClient`
 
 エントリポイントとなるクラス。配信の情報取得やコメントの取得などのAPIを提供する。
 
-#### `new NicoLiveClient(config: NicoliveClientConfig): NicoLiveClient`
+#### `new NicoliveClient(config: NicoliveClientConfig): NicoliveClient`
 
-NicoLiveClientのインスタンスを生成する。
+NicoliveClientのインスタンスを生成する。
 
 ##### 引数
 
-- `config`: NicoLiveClientの設定
+- `config`: NicoliveClientの設定
   - `config.liveId`: (`string`) 配信ID(`"lvXXXXXXXX"`)
 
 
-#### `NicoLiveClient.connect(): void`
+#### `NicoliveClient.connect(): void`
 
 配信のWebSocketAPI及びコメントサーバーへ接続する。
 
 
-#### `NicoLiveClient.disconnect(): void`
+#### `NicoliveClient.disconnect(): void`
 
 配信のWebSocketAPI及びコメントサーバーとの接続を切断する。
 
 
-#### `NicoliveClient.on(event: string, listener: (...args: any[]) => void): NicoLiveClient`
+#### `NicoliveClient.on(event: string, listener: (...args: any[]) => void): NicoliveClient`
 
 イベントリスナーを登録する。
 
@@ -61,7 +61,7 @@ NicoLiveClientのインスタンスを生成する。
 - `listener`: (`(...args: any[]) => void`) イベントリスナー
 
 
-#### `NicoliveClient.off(event: string, listener: (...args: any[]) => void): NicoLiveClient`
+#### `NicoliveClient.off(event: string, listener: (...args: any[]) => void): NicoliveClient`
 
 イベントリスナーを解除する。
 
@@ -71,7 +71,7 @@ NicoLiveClientのインスタンスを生成する。
 - `listener`: (`(...args: any[]) => void`) イベントリスナー
 
 
-#### `NicoliveClient.once(event: string, listener: (...args: any[]) => void): NicoLiveClient`
+#### `NicoliveClient.once(event: string, listener: (...args: any[]) => void): NicoliveClient`
 
 一度だけ呼ばれるイベントリスナーを登録する。
 
